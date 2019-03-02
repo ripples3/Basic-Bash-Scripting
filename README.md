@@ -14,6 +14,8 @@ The guide may be used and shared for educational, non-commercial, not-for-profit
 #! /bin/sh
 ls
 ```
+4. Run the script by executing command **./first.sh**
+
 
 ### Install the [Documentation Builder](https://github.com/OpenInternet/Documentation-Builder.git)
 
