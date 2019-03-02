@@ -101,9 +101,86 @@ echo "You are $(get_name)"
 ```
 
 ### Loops
+ Loops are a sequence of instruction s that is continually repeated until a certain condition is reached
 #### Basic for loop
 ```
 for i in /etc/rc.*; do
   echo $i
 done
 ```
+#### Forever
+```
+while true; do
+  ···
+done
+```
+#### Ranges
+```
+for i in {1..5}; do
+    echo "Welcome $i"
+done
+
+#With step size
+for i in {5..50..5}; do
+    echo "Welcome $i"
+done
+```
+
+### Functions
+#### Defining Functions
+```
+myfunc() {
+    echo "hello $1"
+}
+# ------------------------------------
+
+# Same as above (alternate syntax)
+function myfunc() {
+    echo "hello $1"
+}
+
+myfunc "John"
+```
+#### Returning values
+```
+myfunc() {
+    local myresult='some value'
+    echo $myresult
+}
+# ------------------------------------
+result="$(myfunc)"
+```
+
+#### Raising Errors
+```
+myfunc() {
+  return 1
+}
+# ------------------------------------
+if myfunc; then
+  echo "success"
+else
+  echo "failure"
+fi
+```
+
+| Tables              | Are              |
+| ------------------- |:----------------:|
+| [[ -z STRING ]]     | Empty string     |
+| [[ -n STRING ]]	    | Not empty string |
+| [[ STRING == STRING ]]	    | Not Equal |
+| [[ NUM -eq NUM ]]	    | Equal |
+| [[ NUM -ne NUM ]]	    | Not equal |
+| [[ NUM -lt NUM ]]	    | Less than |
+| [[ NUM -le NUM ]]	    | Less than or equal |
+| [[ NUM -gt NUM ]]	    | Greater than |
+| [[ NUM -ge NUM ]]	    | Greater than or equal |
+| [[ STRING =~ STRING ]]	    | Regexp |
+| (( NUM < NUM ))	    | Numeric conditions |
+| [[ -o noclobber ]]    | If OPTIONNAME is enabled |
+| [[ ! EXPR ]]   | Not |
+| [[ X ]] && [[ Y ]]   | And |
+| [[ X ]] || [[ Y ]]    | Or |
+
+
+
