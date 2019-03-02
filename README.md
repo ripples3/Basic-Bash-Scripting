@@ -184,7 +184,8 @@ Note that [[ is actually a command/program that returns either 0 (true) or 1 (fa
 | [[ -o noclobber ]]    | If OPTIONNAME is enabled |
 | [[ ! EXPR ]]   | Not |
 | [[ X ]] && [[ Y ]]   | And |
-| [[ X ]] || [[ Y ]]    | Or |
+| <p> [[ X ]] &#124; &#124; [[ Y ]] </p>   | Or       |
+
 
 #### File Conditions
 | Condition              | Function       |
@@ -200,3 +201,6 @@ Note that [[ is actually a command/program that returns either 0 (true) or 1 (fa
 | [[ FILE1 -nt FILE2 ]]	| 1 is more recent than 2 |
 | [[ FILE1 -ot FILE2 ]]	| 2 is more recent than 1 |
 | [[ FILE1 -ef FILE2 ]]	| Same files |
+
+
+
