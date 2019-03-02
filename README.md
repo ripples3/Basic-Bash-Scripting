@@ -7,7 +7,7 @@ The guide may be used and shared for educational, non-commercial, not-for-profit
 ### Let's create a simple scirpt
 
 1. We will create a file, first.sh (you can use any text editor)
-2. The first line will be ***#! /bin/sh** (it tells the interpreter that it is a bash script).
+2. The first line will be **#! /bin/sh** (it tells the interpreter that it is a bash script).
 3. We will write a command ls(list the subfolders in the directory)
 
 ```
