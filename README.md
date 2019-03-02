@@ -48,13 +48,12 @@ echo "${NAME}!"
 Variables are accessed using the $ sign.
 
 ### String
-String are assigned to varialb
+String are assigned to a variable
 ```
 NAME="John"
 echo "Hi $NAME"  #=> Hi John
 echo 'Hi $NAME'  #=> Hi $NAME
 ```
-
 
 
 ### Echo
@@ -92,37 +91,19 @@ git commit && git push
 git commit || echo "Commit failed"
 ```
 
-In the above script, we automate the whole process of pushing the commit to the repo. I used $1 in the above code, it is like a placeholder for the input that the user will provide.To run this script, write bash git.sh ‘initial commit’. Here the ‘initial commit’ will be placed at the $1.
-
-Instead of writing the git commands manually, we automate the process by running the script. Let’s take a deep dive into shell scripting.
-
-
-In the above script, we automate the whole process of pushing the commit to the repo. I used $1 in the above code, it is like a placeholder for the input that the user will provide.To run this script, write bash git.sh ‘initial commit’. Here the ‘initial commit’ will be placed at the $1.
-
-Instead of writing the git commands manually, we automate the process by running the script. Let’s take a deep dive into shell scripting.
-
-
-### Install the [Documentation Builder](https://github.com/OpenInternet/Documentation-Builder.git)
-
-[Use the installation instructions found here.](https://github.com/OpenInternet/Documentation-Builder/blob/master/docs/INSTALL.md)
-
-### Download the [System Administrator Guide Text](https://github.com/OpenInternet/System_Administrator_Guide_Text)
-
+### Functions
+Functions are group of statements that together perform a task.
 ```
-git clone https://github.com/OpenInternet/System_Administrator_Guide_Text.git
-```
-### Download and Install the [System Administrator Guide Theme Templates](https://github.com/OpenInternet/System_Administrator_Guide_Templates)
-
-```
-git clone https://github.com/OpenInternet/System_Administrator_Guide_Templates.git
-cd System_Administrator_Guide_Templates
-./install
-cd ..
+get_name() {
+  echo "John"
+}
+echo "You are $(get_name)"
 ```
 
-### Create the System Administrator Guide
-
+### Loops
+#### Basic for loop
 ```
-cd /path/to/documentation/builder/
-./builddoc  -i path/to/System_Administrator_Guide_Text/en -t /path/to/System_Administrator_Guide_Templates/ -o output_filename.pdf
+for i in /etc/rc.*; do
+  echo $i
+done
 ```
