@@ -164,7 +164,11 @@ else
 fi
 ```
 
-| Tables              | Are              |
+### Conditional Statements
+Note that [[ is actually a command/program that returns either 0 (true) or 1 (false). Any program that obeys the same logic (like all base utils, such as grep(1) or ping(1)) can be used as condition, see examples.
+
+#### Conditions
+| Condition              | Function       |
 | ------------------- |:----------------:|
 | [[ -z STRING ]]     | Empty string     |
 | [[ -n STRING ]]	    | Not empty string |
@@ -182,5 +186,17 @@ fi
 | [[ X ]] && [[ Y ]]   | And |
 | [[ X ]] || [[ Y ]]    | Or |
 
-
-
+#### File Conditions
+| Condition              | Function       |
+| ------------------- |:----------------:|
+| [[ -e FILE ]]	      |  Exists  |
+| [[ -r FILE ]]	| Readable |
+| [[ -h FILE ]]	Symlink
+| [[ -d FILE ]]	Directory
+| [[ -w FILE ]]	Writable
+| [[ -s FILE ]]	Size is > 0 bytes
+| [[ -f FILE ]]	File
+| [[ -x FILE ]]	Executable
+| [[ FILE1 -nt FILE2 ]]	1 is more recent than 2
+| [[ FILE1 -ot FILE2 ]]	2 is more recent than 1
+| [[ FILE1 -ef FILE2 ]]	Same files
