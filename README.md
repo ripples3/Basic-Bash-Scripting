@@ -39,8 +39,58 @@ Variables are declared using the =
 ```
 MY_NAME='Morty' #No spaces 
 ```
+```
+NAME="John"
+echo $NAME
+echo "$NAME"
+echo "${NAME}!"
+```
 Variables are accessed using the $ sign.
 
+### String
+String are assigned to varialb
+```
+NAME="John"
+echo "Hi $NAME"  #=> Hi John
+echo 'Hi $NAME'  #=> Hi $NAME
+```
+
+
+
+### Echo
+Echo is used to display the statement in the shell just like printf in C language.
+```
+MY_NAME='Morty' 
+echo "My name is $MY_NAME"
+
+<Output>
+# My name is Morty
+```
+
+### Conditional Statements
+Let’s see how an if else statement looks in bash scripting.
+```
+if [[condition]];
+then
+# write the then instructions here
+else
+# write the else instructions here
+fi
+```
+```
+if [[ -z "$string" ]]; then
+  echo "String is empty"
+elif [[ -n "$string" ]]; then
+  echo "String is not empty"
+fi
+
+```
+### Conditional execution
+These are some of conditions
+```
+git commit && git push
+git commit || echo "Commit failed"
+```
 
 In the above script, we automate the whole process of pushing the commit to the repo. I used $1 in the above code, it is like a placeholder for the input that the user will provide.To run this script, write bash git.sh ‘initial commit’. Here the ‘initial commit’ will be placed at the $1.
 
